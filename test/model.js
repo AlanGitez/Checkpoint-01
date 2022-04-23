@@ -12,16 +12,16 @@ describe('To do model', function() {
   });
 
   describe('`listPeople` y `add`', function() {
-    xit('inicialmente devuelve un arreglo vacío', function() {
+    it('inicialmente devuelve un arreglo vacío', function() {
       expect(Todos.listPeople()).to.eql([]);
     });
 
-    xit('agrega personas a la lista una vez que se les asignan tareas', function() {
+    it('agrega personas a la lista una vez que se les asignan tareas', function() {
       Todos.add('guille', { content: 'limpiar su cuarto' });
       expect(Todos.listPeople()).to.eql(['guille']);
     });
 
-    xit('maneja distintas personas con distintas tareas', function(){
+    it('maneja distintas personas con distintas tareas', function(){
       Todos.add('toni', { content: 'limpiar su cuarto' });
       Todos.add('toni', { content: 'comprar pan' });
       expect(Todos.listPeople()).to.eql(['toni']);
@@ -31,7 +31,7 @@ describe('To do model', function() {
   });
 
   describe('`add` y `list`', function() {
-    xit('recuerda quien hace que', function() {
+    it('recuerda quien hace que', function() {
       Todos.add('facu', { content: 'limpiar el baño' });
       expect(Todos.list('facu')).to.have.length(1);
       Todos.add('guille', { content: 'comprar chocolate' });

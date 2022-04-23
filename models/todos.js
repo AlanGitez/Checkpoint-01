@@ -15,7 +15,10 @@
  *     (__)       ()__________)
  */
 
-var tasks = {}; // acá vamos a guardar nuestras personas y tareas
+var tasks = 
+{
+  
+}; // acá vamos a guardar nuestras personas y tareas
 
 module.exports = {
   reset: function () {
@@ -24,9 +27,16 @@ module.exports = {
   // ==== COMPLETEN LAS SIGUIENTES FUNCIONES (vean los test de `model.js`) =====
   listPeople: function () {
     // devuelve un arreglo de personas con tareas
+    let people = [];
+    for (const key in tasks) {
+      people.push(key);
+    }
+    return people;
   },
   add: function (name, task) {
     // guarda una tarea para una persona en particular
+    tasks[name] ? tasks[name].push(task) : tasks[name] = [task];
+    
   },
   // etc.
 };
