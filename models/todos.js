@@ -25,6 +25,7 @@ module.exports = {
     tasks = {}; // esta función ya esta armada :D
   },
   // ==== COMPLETEN LAS SIGUIENTES FUNCIONES (vean los test de `model.js`) =====
+  // LISTA DE LOS USUARIOS.
   listPeople: function () {
     // devuelve un arreglo de personas con tareas
     let people = [];
@@ -35,8 +36,21 @@ module.exports = {
   },
   add: function (name, task) {
     // guarda una tarea para una persona en particular
+    if(!task.complete) task.complete = false;
     tasks[name] ? tasks[name].push(task) : tasks[name] = [task];
-    
   },
+  // CUANTAS TAREAS POSEE CADA USUARIO.
+  list: function(name){
+    return tasks[name];
+  },
+  complete: function(name, i){
+    // if(!tasks[name].complete)
+    if(!tasks[name][i].complete)
+    tasks[name][i].complete = true;
+  },
+  remove: function(name, i){
+    return tasks[name].splice(i, 1);
+  }
+
   // etc.
 };

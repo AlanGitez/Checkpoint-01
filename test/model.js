@@ -42,20 +42,20 @@ describe('To do model', function() {
   });
 
   describe('`complete`', function() {
-    xit('la propiedad `complete` es un booleano que ponemos como `false`\
+    it('la propiedad `complete` es un booleano que ponemos como `false`\
       cada vez que ingresa una nueva tarea', function() {
       Todos.add('santi', { content: 'bañarse' });
       expect(Todos.list('santi')[0].complete).to.be.false;
     });
 
-    xit('respeta un estado pre establecido para la tarea', function() {
+    it('respeta un estado pre establecido para la tarea', function() {
       Todos.add('toni', { content: 'hacer cafe', complete: true });
       Todos.add('toni', { content: 'dejar de fumar', complete: false });
       expect(Todos.list('toni')[0].complete).to.be.true;
       expect(Todos.list('toni')[1].complete).to.be.false;
     });
 
-    xit("el método `complete` cambia el estado de la tarea a completado (`true`)", function() {
+    it("el método `complete` cambia el estado de la tarea a completado (`true`)", function() {
       Todos.add('santi', { content: 'ir al chino' });
       Todos.add('santi', { content: 'ir al kiosko' });
       Todos.add('santi', { content: 'limpiar la maquinita' });
@@ -67,7 +67,7 @@ describe('To do model', function() {
   });
 
   describe('`remove`', function() {
-    xit('remueve una tarea de una persona por indice', function() {
+    it('remueve una tarea de una persona por indice', function() {
       // seteo un grupo de tareas
       for (var i = 0; i < 10; i++) Todos.add('guille', { content: 'tarea ' + i });
       expect(Todos.list('guille').length).to.equal(10);

@@ -12,7 +12,7 @@ describe('Todo routes', function() {
   });
 
   describe('`/users` URI', function() {
-    xit('GET responde con un array vacío de entrada', function() {
+    it('GET responde con un array vacío de entrada', function() {
       // cuando hacemos un request a `/users` recibimos un arreglo vacio
       return supertest // supertest nos permite hacer y testear requests HTTP
         .get('/users') // hacemos un request HTTP: GET a '/users'
