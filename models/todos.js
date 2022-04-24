@@ -51,6 +51,5 @@ module.exports = {
   remove: function(name, i){
     return tasks[name].splice(i, 1);
   }
-
   // etc.
 };
