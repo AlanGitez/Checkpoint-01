@@ -14,7 +14,7 @@ app.use(express.json())
 app.use(bodyParser.json());
 // app.use("/api", routes)
 
-app.get("/", (req, res) => {
+app.get("./", (req, res) => {
     console.log("que onda ");
     res.status(200).send(todos.listPeople());
 
