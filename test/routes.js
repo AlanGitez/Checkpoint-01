@@ -125,7 +125,7 @@ describe('Todo routes', function() {
           });
       });
 
-      xit('GET podemos pedir solo las tareas activas (incompletas)', function () {
+      it('GET podemos pedir solo las tareas activas (incompletas)', function () {
         return supertest
           .get('/users/solano/tasks?status=active')
           .expect(200)
@@ -139,7 +139,7 @@ describe('Todo routes', function() {
 
     describe('`/:index` URI', function() {
 
-      xit('PUT asigna una tarea como completa', function() {
+      it('PUT asigna una tarea como completa', function() {
         todos.add('santi', { content: 't0' });
         todos.add('santi', { content: 't1' });
         todos.add('santi', { content: 't2' });
@@ -154,7 +154,7 @@ describe('Todo routes', function() {
           });
       });
 
-      xit('DELETE borra una tarea', function() {
+      it('DELETE borra una tarea', function() {
         todos.add('guille', { content: 'dar lecture' });
         todos.add('guille', { content: 'ayudar con el workshop' });
         todos.add('guille', { content: 'hacer el review' });
@@ -172,13 +172,13 @@ describe('Todo routes', function() {
 
     describe('manejo de errores', function() {
 
-      xit('responde con status 404 si el usuaio no existe', function () {
+      it('responde con status 404 si el usuaio no existe', function () {
         return supertest
           .get('/users/messi/tasks')
           .expect(404);
       });
 
-      xit('responde con status 400 si se trata de agregar una tarea con propiedades erroneas', function () {
+      it('responde con status 400 si se trata de agregar una tarea con propiedades erroneas', function () {
         return supertest
           .post('/users/bob/tasks')
           .send({

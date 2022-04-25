@@ -44,7 +44,6 @@ module.exports = {
     return tasks[name];
   },
   complete: function(name, i){
-    // if(!tasks[name].complete)
     if(!tasks[name][i].complete)
     tasks[name][i].complete = true;
   },
