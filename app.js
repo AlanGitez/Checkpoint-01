@@ -13,11 +13,11 @@ module.exports = app; // esto es solo para testear mas facil
 
 app.use(express.json())
 app.use(bodyParser.json());
-// app.use("/api", routes)
+
 
 app.get("/users", (req, res) => {
-    res.body = todos.listPeople();
-    res.status(200).send(res.body);
+    const people = todos.listPeople();
+    res.status(200).send(people);
 });
 
 app.get("/users/:name/tasks", (req, res) => {
@@ -39,15 +39,13 @@ app.get("/users/:name/tasks", (req, res) => {
 app.post("/users/:name/tasks", (req, res) => {
     const name = req.params.name;
     const task = req.body;
-    //const {key1, key2} = task;
-    console.log(task)
-    
     
     for (const key in task) {
-        if(key != content || key != complete)
-            return res.status(400).send(task);
+        console.log(key)
+        if(key.toString() != "content" && key.toString() != "complete"){
+            return res.status(400).send(task)
+        } 
     }
-    
     todos.add(name, task);
     res.status(201).send(task);
 });
